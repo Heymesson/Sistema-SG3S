@@ -1,0 +1,99 @@
+/* Cor de fundo geral */
+body {
+  background-color: #f4d03f; /* Amarelo claro e suave */
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar (Mobile-first centralizado) */
+.sidenav {
+  background-color: #f7dc6f; /* Amarelo pastel */
+  height: auto; /* Altura automática para dispositivos móveis */
+  min-height: 81.2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Texto principal */
+.login-main-text h1,
+.login-main-text h2,
+.login-main-text p {
+  color: #333; /* Cinza escuro para melhor contraste */
+  margin: 0.5rem 0;
+}
+
+/* Formulário */
+.login-form {
+  background-color: #ffffff;
+  border: 2px solid #f7dc6f; /* Amarelo pastel */
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%; /* Largura total no mobile */
+  max-width: 400px; /* Limite de largura para telas maiores */
+  margin: 0 auto; /* Centralizado horizontalmente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões */
+.btn-primary {
+  background-color: #f7dc6f; /* Amarelo pastel */
+  border-color: #f7dc6f;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #f4d03f; /* Amarelo mais vibrante */
+  border-color: #f4d03f;
+}
+
+/* Inputs */
+.input-group-text {
+  background-color: #f7dc6f; /* Amarelo pastel */
+  color: #000;
+}
+
+input.form-control {
+  border-radius: 0 4px 4px 0;
+}
+
+/* Rodapé */
+footer {
+  background-color: #fff9c4; /* Amarelo bem claro */
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Estilos responsivos para dispositivos maiores */
+@media (min-width: 768px) {
+  .sidenav {
+    flex-direction: row; /* Sidebar horizontal em telas maiores */
+    text-align: left;
+    height: 81.2vh;
+  }
+
+  .login-main-text {
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  .login-form {
+    flex: 1;
+    margin: 0;
+    padding: 2rem;
+  }
+}
+
+/* Tamanho da imagem */
+.tam_img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border-style: ridge;
+}

@@ -1,0 +1,139 @@
+/* Cor de fundo geral */
+body {
+  background-color: #fffde7; /* Amarelo claro e suave */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header e navegação */
+header {
+  background-color: #f7dc6f; /* Amarelo pastel */
+}
+
+nav .btn {
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+
+nav .btn-warning {
+  background-color: #f7dc6f; /* Amarelo pastel */
+  color: #000;
+}
+
+nav .btn-warning:hover {
+  background-color: #f4d03f; /* Amarelo mais vibrante, mas ainda suave */
+  color: #000;
+}
+
+nav .btn-danger {
+  background-color: #e57373; /* Vermelho mais claro */
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+nav .btn-danger:hover {
+  background-color: #ef9a9a; /* Vermelho mais suave */
+  color: #fff;
+}
+
+/* Barra de busca */
+.search-bar input {
+  max-width: 200px;
+  border: 2px solid #f7dc6f; /* Amarelo pastel */
+}
+
+.search-bar .btn {
+  border-color: #f7dc6f;
+  background-color: #f7dc6f;
+}
+
+.search-bar .btn-warning:hover {
+  background-color: #f4d03f; /* Amarelo vibrante */
+}
+
+/* Parte central */
+main {
+  text-align: center;
+}
+
+main h1 {
+  color: #333;
+  font-weight: bold;
+}
+
+main a.btn-success {
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+}
+
+/* Footer */
+footer {
+  color: #666;
+  font-size: 0.9rem;
+  background-color: #fff9c4; /* Amarelo bem claro */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Estilo da Modal de Sucesso */
+.modal-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.modal-success .modal-header {
+  background-color: #c3e6cb;
+  border-bottom: 1px solid #155724;
+}
+
+.modal-success .modal-title {
+  color: #155724;
+}
+
+.modal-success .btn-close {
+  color: #155724;
+}
+
+.modal-success .modal-footer {
+  border-top: 1px solid #155724;
+}
+
+.hidden {
+  display: none;
+}
+
+#pedido_finalizado {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#pedido_info li {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+#pedido_info {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.main-container {
+  padding: 0 15px;
+}
+
+@media (max-width: 576px) {
+  .btn-lg {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+  }
+
+  .modal-dialog {
+      margin: 10px;
+  }
+}

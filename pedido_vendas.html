@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Pedido - Sistema de Gerenciamento SG3S</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header class="bg-warning py-3">
+        <nav class="container-fluid d-flex flex-wrap justify-content-between align-items-center">
+            <!-- Menu de Navegação -->
+            <div class="d-flex flex-wrap justify-content-start align-items-center">
+                <a href="pedido_vendas.html" class="btn btn-warning me-2 mb-2"><i class="fas fa-home"></i> Início</a>
+                <a href="cliente.html" class="btn btn-warning me-2 mb-2"><i class="fas fa-user"></i> Cliente</a>
+                <a href="produto.html" class="btn btn-warning me-2 mb-2"><i class="fas fa-box"></i> Produto</a>
+                <a href="usuario.html" class="btn btn-warning me-2 mb-2"><i class="fas fa-users"></i> Usuário</a>
+                <a href="relatorio.html" class="btn btn-warning mb-2"><i class="bi bi-file-earmark-diff-fill"></i> Relatório</a>
+            </div>
+            <!-- Busca e Logout -->
+            <div class="d-flex flex-wrap align-items-center mt-2 mt-md-0">
+                <input type="text" class="form-control py-2 w-auto mb-2 mb-md-0" placeholder="Buscar..." />
+                <button class="btn btn-warning ms-0 ms-md-2 mb-2 mb-md-0"><i class="fas fa-search"></i></button>
+                <a href="login.html" class="btn btn-danger ms-0 ms-md-2"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            </div>
+        </nav>
+    </header>    
+    <main class="container main-container mt-4">
+        <div class="text-center mb-4">
+            <h1 class="display-5">Gerenciamento de Pedidos</h1>
+            <p class="lead">Preencha os campos abaixo para registrar um novo pedido.</p>
+        </div>
+        <!-- Formulário de Pedido -->
+        <form id="form_pedido">
+            <h6 class="text-uppercase mb-3">Dados do Pedido</h6>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="lista_cliente" class="form-label">Cliente *</label>
+                    <select class="form-select" id="lista_cliente">
+                        <option selected disabled>Selecione</option>
+                        <option value="1">Tecidos São João</option>
+                        <option value="2">Fábrica de Tecidos Leste</option>
+                        <option value="3">Armarinho Belém</option>
+                        <option value="4">Veste Moda Ltda</option>
+                        <option value="5">Tecidos e Cia</option>
+                        <option value="6">Loja de Tecidos Doce Lar</option>
+                        <option value="7">Tecidos ABC</option>
+                        <option value="8">Indústria Têxtil Rio</option>
+                        <option value="9">Moda Têxtil</option>
+                        <option value="10">Casa dos Tecidos</option>
+                        <!-- Lista de Clientes -->
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="nome_produto" class="form-label">Produto *</label>
+                    <select class="form-select" id="nome_produto">
+                        <option selected disabled>Selecione</option>
+                        <option value="1">Algodão 100%</option>
+                        <option value="2">Tricoline Estampada</option>
+                        <option value="3">Linho Natural</option>
+                        <option value="4">Jeans Azul Claro</option>
+                        <option value="5">Seda Importada</option>
+                        <option value="6">Malha de Algodão</option>
+                        <option value="7">Veludo Colorido</option>
+                        <option value="8">Tecido de Poá</option>
+                        <option value="9">Manta Acrílica</option>
+                        <option value="10">Renda Branca</option>
+                        <!-- Lista de Produtos -->
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="qtd_prod_pedido" class="form-label">Quantidade *</label>
+                    <input type="number" class="form-control" id="qtd_prod_pedido" required autocomplete="off" min="1" />
+                </div>
+                <div class="col-md-2">
+                    <label for="forma_pagamento" class="form-label">Forma de Pagamento *</label>
+                    <select class="form-select" id="forma_pagamento">
+                        <option selected disabled>Selecione</option>
+                        <option value="1">Pix</option>
+                        <option value="2">Cartão de Crédito</option>
+                        <option value="3">Cartão de Débito</option>
+                        <option value="4">Boleto</option>
+                        <option value="5">Dinheiro</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="valor_total" class="form-label">Valor Total</label>
+                    <input type="text" class="form-control" id="valor_total" disabled />
+                </div>
+                <div class="col-md-12">
+                    <label for="observacoes" class="form-label">Observações</label>
+                    <textarea class="form-control" id="observacoes"></textarea>
+                </div>
+            </div> 
+            <div class="text-center mt-4">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i> Fechar</button>
+                <button type="submit" class="btn btn-success"><i class="bi bi-bag"></i> Finalizar Pedido</button>
+            </div>
+        </form>
+        
+        <div id="pedido_finalizado" class="mt-4" style="display: none;">
+            <h5>Resumo do Pedido</h5>
+            <ul id="pedido_info"></ul>
+            <button id="alterar_pedido" class="btn btn-warning"><i class="bi bi-pencil"></i> Alterar</button>
+            <button id="cancelar_pedido" class="btn btn-danger"><i class="bi bi-x-circle"></i> Cancelar</button>
+            <button id="imprimir_pedido" class="btn btn-info"><i class="bi bi-printer"></i> Imprimir</button>
+        </div>
+    </main>
+    <footer class="text-center py-3 mt-4">
+        <p>&copy; 2024 Sistema de Gerenciamento SG3S. Todos os direitos reservados.</p>
+        <p>Developed by Heymesson Azêvedo.</p>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="js/pedido.js"></script>
+</body>
+</html>
